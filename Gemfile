@@ -12,6 +12,7 @@ gem 'pundit'
 gem 'figaro', '1.0'
 gem 'haml'
 gem 'bourbon'
+gem 'webruby'
 
 group :development, :test do
   gem 'byebug'
