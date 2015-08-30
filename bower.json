@@ -1,0 +1,24 @@
+{
+  "name": "rubyplex",
+  "version": "0.1.0",
+  "homepage": "https://github.com/AbdullahAlger/rubyplex",
+  "authors": [
+    "Abdullah Alger <abdullahalger@me.com>"
+  ],
+  "description": "project rubyplex",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
