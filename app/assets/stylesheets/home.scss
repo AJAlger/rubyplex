@@ -2,14 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-section#code-editor {
-  width: 100%;
-
-  #editor {
-    position: relative;
-    height: 100vh;
-    padding: 0;
-  }
+#code-editor, #code-results  {
+  width: 50%;
+  height: 100%;
+  float: left;
 }
 
-
+#editor, #results {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+}
