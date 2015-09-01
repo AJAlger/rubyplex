@@ -22,5 +22,17 @@
           = link_to "Sign In", new_user_session_path
           |
           = link_to "Register", new_user_registration_path
+    - if flash[:notice]
+      .alert.alert-success
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        = flash[:notice]
+    - elsif flash[:error]
+      .alert.alert-danger
+        %button.close{"data-dimiss" => "alert", :type => "button"} ×
+        = flash[:error]
+    - elsif flash[:alert]
+      .alert.alert-warning
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        = flash[:alert]
     = yield
 

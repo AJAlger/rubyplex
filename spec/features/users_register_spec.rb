@@ -2,12 +2,9 @@ require 'rails_helper'
 
 feature "User registers" do
 
-  xscenario "with valid details" do
+  scenario "with valid details" do
 
     visit "/"
-
-    # TDD TODO
-    # this link has not been created yet.
 
     click_link "Register"
     expect(current_path).to eq(new_user_registration_path)
@@ -33,9 +30,5 @@ feature "User registers" do
     fill_in "Email", with: "tester@example.tld"
     fill_in "Password", with: "test-password"
     click_button "Log in"
-
-    # need some specs here with what the user will login to. Perhaps a login page with the user
-    # profile and saved code should be tested here
-
   end
 end
