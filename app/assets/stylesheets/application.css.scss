@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bourbon";
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "navigation";
+@import "home";
+@import "sketches";
