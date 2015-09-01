@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require event
+//= require webruby
 //= require turbolinks
 //= require_tree .
