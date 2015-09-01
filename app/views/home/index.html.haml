@@ -1,1 +1,10 @@
-The code editor goes here
+%section#code-editor
+  #editor-container
+    #editor
+
+%script{type: "text/javascript", src: "http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js", charset: "utf-8"}
+%script
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/monokai");
+  editor.getSession().setMode("ace/mode/ruby");
+  editor.getSession().setTabSize(2);
