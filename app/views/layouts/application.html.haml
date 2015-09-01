@@ -11,7 +11,7 @@
       .nav.navbar-nav
         = link_to "RubyPlex Logo", root_path
         - if user_signed_in?
-          .user-sketches= link_to "Sketches", user_sketches_path
+          .user-sketches= link_to "Sketches", root_path
       .navbar-right.user-info
         - if user_signed_in?
           Hey,
