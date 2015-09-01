@@ -1,10 +1,12 @@
 %section#code-editor
-  #editor-container
-    #editor
+  .container-fluid
+    .row
+      #editor
 
-%script{type: "text/javascript", src: "http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js", charset: "utf-8"}
+%script{type: "text/javascript", src: "https://cdn.rawgit.com/ajaxorg/ace-builds/master/src-noconflict/ace.js", charset: "utf-8"}
 %script
   var editor = ace.edit("editor");
-  editor.setTheme("ace/theme/monokai");
+  editor.setTheme("ace/theme/terminal");
   editor.getSession().setMode("ace/mode/ruby");
   editor.getSession().setTabSize(2);
+  editor.setReadOnly(false);

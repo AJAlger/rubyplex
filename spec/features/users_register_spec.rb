@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "User registers" do
 
-  scenario "with valid details" do
+  xscenario "with valid details" do
 
     visit "/"
 
