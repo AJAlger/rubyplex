@@ -8,10 +8,10 @@
     = csrf_meta_tags
   %body
     %nav.navbar.navbar-default
-      %ul.nav.navbar-nav
-        %li.logo= link_to "RubyPlex Logo", root_path
+      .nav.navbar-nav
+        = link_to "RubyPlex Logo", root_path
         - if user_signed_in?
-          %li.user-sketches= link_to "Sketches", user_sketches_path
+          .user-sketches= link_to "Sketches", user_sketches_path
       .navbar-right.user-info
         - if user_signed_in?
           Hey,

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831200643) do
+ActiveRecord::Schema.define(version: 20150901103938) do
 
   create_table "sketches", force: :cascade do |t|
     t.string   "title"
@@ -42,6 +42,9 @@ ActiveRecord::Schema.define(version: 20150831200643) do
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.string   "role",                   default: "standard"
+    t.integer  "failed_attempts",        default: 0
+    t.string   "unlock_token"
+    t.datetime "locked_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
