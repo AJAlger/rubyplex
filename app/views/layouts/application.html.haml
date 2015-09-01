@@ -5,8 +5,22 @@
     %meta{"name" => "viewport", "content" => "width=device-width, initial-scale=1"}
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
-    = javascript_include_tag "http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"
     = csrf_meta_tags
   %body
+    %nav.navbar.navbar-default
+      %ul.nav.navbar-nav
+        %li.logo= link_to "RubyPlex Logo", root_path
+        - if user_signed_in?
+          %li.user-sketches= link_to "Sketches", user_sketches_path
+      .navbar-right.user-info
+        - if user_signed_in?
+          Hey,
+          = link_to current_user.name, edit_user_registration_path
+          = link_to destroy_user_session_path, method: :delete do
+            %span Logout
+        - else
+          = link_to "Sign In", new_user_session_path
+          |
+          = link_to "Register", new_user_registration_path
     = yield
 

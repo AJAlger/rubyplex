@@ -1,0 +1,48 @@
+body {
+  margin: 0 auto;
+}
+
+.navbar {
+  background-color: steelblue;
+  border-radius: 0;
+  font-size: 1em;
+  margin-left: -20px;
+  margin-right: -20px;
+  border: none;
+  margin-bottom: 0;
+
+  .navbar-nav {
+    padding: 20px;
+    margin-left: 50px;
+    font-size: 1em;
+    color: #fff;
+
+
+
+    li {
+      .logo {
+        padding: 0;
+        color: #fff;
+        font-size: 1em;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+
+  .user-info {
+    padding: 20px;
+    margin-right: 60px;
+    color: #fff;
+    font-size: 1em;
+
+    a {
+      color: #fff;
+    }
+    span {
+      margin-left: 10px;
+
+    }
+  }
+}
