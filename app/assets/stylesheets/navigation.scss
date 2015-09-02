@@ -4,28 +4,27 @@ body {
 }
 
 .navbar {
-  background-color: steelblue;
+  background-color: white;
   border-radius: 0;
   font-size: 1em;
   border: none;
   margin-bottom: 0;
 
   .navbar-nav, .user-info {
-    padding: 20px;
     font-size: 1em;
-    color: #fff;
+    color: red;
 
     a {
-      color: #fff;
+      color: steelblue;
     }
   }
 
   .navbar-nav {
-    margin-left: 50px;
   }
 
   .user-info {
     margin-right: 50px;
+    padding: 10px 0;
     span {
       margin-left: 10px;
     }

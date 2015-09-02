@@ -15,4 +15,4 @@
 //= require event
 //= require webruby
 //= require turbolinks
-//= require_tree .
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
