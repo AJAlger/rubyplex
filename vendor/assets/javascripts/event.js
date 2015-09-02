@@ -41,6 +41,14 @@
 
         });
 
+        $("#clear-button").click(function() {
+            editor.setValue("");
+        });
+
+        $("#clear-console-button").click(function() {
+            $("#results").empty();
+        });
+
         window.onbeforeunload = function () {
             webruby.close();
         }
