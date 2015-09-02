@@ -9,9 +9,9 @@
   %body
     %nav.navbar.navbar-default
       .nav.navbar-nav
-        = link_to "RubyPlex Logo", root_path
+        = link_to (image_tag "rubyplex-nav-design.jpg"), root_path
         - if user_signed_in?
-          .user-sketches= link_to "Sketches", root_path
+          .user-sketches= link_to "Number of sketches", root_path
       .navbar-right.user-info
         - if user_signed_in?
           Hey,
@@ -24,15 +24,15 @@
           = link_to "Register", new_user_registration_path
     - if flash[:notice]
       .alert.alert-success
-        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %button.close{"data-dismiss" => "alert", type: "button"} ×
         = flash[:notice]
     - elsif flash[:error]
       .alert.alert-danger
-        %button.close{"data-dimiss" => "alert", :type => "button"} ×
+        %button.close{"data-dimiss" => "alert", type: "button"} ×
         = flash[:error]
     - elsif flash[:alert]
       .alert.alert-warning
-        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %button.close{"data-dismiss" => "alert", type: "button"} ×
         = flash[:alert]
     = yield
 
