@@ -20,8 +20,21 @@
   button {
     z-index: 2;
     position: absolute;
+  }
+
+  #submit-button {
     right: 10px;
     top: 10px;
+  }
+
+  #clear-button {
+    right: 10px;
+    top: 50px;
+  }
+
+  #clear-console-button {
+    right: 10px;
+    top: 90px;
   }
 
   .btn {
