@@ -17,39 +17,52 @@
 #code-results {
   position: relative;
 
+  #buttons {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+  }
+
   button {
-    z-index: 2;
-    position: absolute;
+    text-align: center;
+  }
+
+  #submit-button,
+  #clear-editor-button,
+  #clear-console-button,
+  #save-button {
+    right: 10px;
   }
 
   #submit-button {
-    right: 10px;
     top: 10px;
   }
 
-  #clear-button {
-    right: 10px;
+  #clear-editor-button {
     top: 50px;
   }
 
   #clear-console-button {
-    right: 10px;
     top: 90px;
   }
 
+  #save-button {
+    top: 130px;
+  }
+
   .btn {
+    width: 100px;
     padding: 5px;
-    border: 2px solid #3b82e5;
-    border-radius: 4px;
     color: #3b82e5;
+    border: 0 none;
+    font-size: 0.7em;
 
-    &:hover, &:active {
+    &:hover, &:active, &:focus, &:active:focus {
       background: none;
-    }
-
-    &:focus, &:active:focus {
+      box-shadow: none;
       outline: 0 none;
     }
+
   }
 
 }
