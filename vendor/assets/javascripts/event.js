@@ -41,7 +41,7 @@
 
         });
 
-        $("#clear-button").click(function() {
+        $("#clear-editor-button").click(function() {
             editor.setValue("");
         });
 
