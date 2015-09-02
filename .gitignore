@@ -20,6 +20,5 @@
 .DS_Store
 
 vendor/assets/components
-vendor/assets/javascripts
 /config/application.yml
 node_modules

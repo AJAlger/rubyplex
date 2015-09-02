@@ -13,3 +13,34 @@
   height: 100vh;
   padding: 0;
 }
+
+#code-results {
+  position: relative;
+
+  button {
+    z-index: 2;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .btn {
+    padding: 5px;
+    border: 2px solid #3b82e5;
+    border-radius: 4px;
+    color: #3b82e5;
+
+    &:hover, &:active {
+      background: none;
+    }
+
+    &:focus, &:active:focus {
+      outline: 0 none;
+    }
+  }
+
+}
+
+
+
+
