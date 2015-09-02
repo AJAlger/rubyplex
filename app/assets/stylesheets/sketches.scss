@@ -1,3 +1,76 @@
-// Place all the styles related to the sketches controller here.
+// Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#code-editor, #code-results  {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+#editor, #results {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+}
+
+#code-results {
+  position: relative;
+
+  #buttons {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid black;
+  }
+
+  button {
+    text-align: center;
+  }
+
+  #submit-button,
+  #clear-editor-button,
+  #clear-console-button,
+  #save-button {
+    right: 10px;
+  }
+
+  #submit-button {
+    top: 10px;
+  }
+
+  #clear-editor-button {
+    top: 50px;
+  }
+
+  #clear-console-button {
+    top: 90px;
+  }
+
+  #save-button {
+    top: 130px;
+  }
+
+  .btn {
+    width: 100px;
+    padding: 5px;
+    color: #3b82e5;
+    border: 0 none;
+    font-size: 0.7em;
+
+    &:hover, &:active, &:focus, &:active:focus {
+      background: none;
+      box-shadow: none;
+      outline: 0 none;
+    }
+
+    &:hover {
+      color: red;
+    }
+
+  }
+
+}
+
+
+
+

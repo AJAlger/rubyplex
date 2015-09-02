@@ -42,7 +42,7 @@
         });
 
         $("#clear-editor-button").click(function() {
-            editor.setValue("");
+            editor.session.setValue("");
         });
 
         $("#clear-console-button").click(function() {

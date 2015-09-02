@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  resources :users, only: [:index] do
-    resources :sketches, only: [:index, :show]
+  resources :users
+  resources :sketches
+
+
 
   #   index of sketches /aa/sketches
     # show a sketch /aa/sketches/324yhawedy7
-  end
+
 
 end
