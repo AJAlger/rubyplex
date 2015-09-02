@@ -1,9 +1,9 @@
 class SketchesController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!
 
   def index
-
+    @sketches = current_user.sketches
   end
 
   def show
@@ -11,10 +11,21 @@ class SketchesController < ApplicationController
   end
   
   def new
-
+    @sketch = current_user.sketches.new
+    authorize @sketch
   end
 
   def create
+    @sketch = current_user.sketches.build(sketch_params)
+    authorize @sketch
+
+    if @sketch.save
+      flash[:notice] = "Sketch was saved."
+      redirect_to @sketch
+    else
+      flash[:error] = "Wasn't saved Dave!"
+      render :new
+    end
 
   end
 
@@ -32,5 +43,9 @@ class SketchesController < ApplicationController
 
   private
 
+  def sketch_params
+    permitted_attributes = [:title, :body]
+    params.require(:sketch).permit(permitted_attributes)
+  end
 
 end

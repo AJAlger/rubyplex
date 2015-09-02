@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :timeoutable, :lockable
 
-  validates :role, presence: true, inclusion: { in: %w{standard pro admin}, message: "should be one of admin, pro, standard" }
+  has_many :sketches, dependent: :destroy
 
-  has_many :sketches
+  validates :role, presence: true, inclusion: { in: %w{standard pro admin}, message: "should be one of admin, pro, standard" }
 
   def admin?
     role == "admin"
