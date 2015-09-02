@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates :role, presence: true, inclusion: { in: %w{standard pro admin}, message: "should be one of admin, pro, standard" }
 
+  has_many :sketches
+
   def admin?
     role == "admin"
   end
