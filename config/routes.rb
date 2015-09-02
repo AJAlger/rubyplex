@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :users, only: [:index] do
-    resources :sketches
+    resources :sketches, only: [:index, :show]
+
+  #   index of sketches /aa/sketches
+    # show a sketch /aa/sketches/324yhawedy7
   end
 
 end
