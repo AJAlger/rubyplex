@@ -8,21 +8,27 @@
     = csrf_meta_tags
   %body
     %nav.navbar.navbar-default
-      %ul.nav.navbar-nav
-        %li= link_to (image_tag "rubyplex-nav-design.jpg"), root_path
-        - if user_signed_in?
-          %li.user-sketches= link_to "Your Sketches", sketches_path
-      %ul.navbar-right.user-info
-        - if user_signed_in?
-          %li
-            Hey,
-            = link_to current_user.name, edit_user_registration_path
-            = link_to destroy_user_session_path, method: :delete do
-              %span Logout
-        - else
-          %li= link_to "Sign In", new_user_session_path
-          |
-          %li= link_to "Register", new_user_registration_path
+      .navbar-header
+        = image_tag "rubyplex-nav-design.jpg"
+      .collapse.navbar-collapse
+        %ul.nav.navbar-right
+          - if user_signed_in?
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                = current_user.name
+                %span.caret
+              %ul.dropdown-menu
+                %li{role: "presentation"}
+                  = link_to sketches_path do
+                    Sketches
+                    %span.badge= current_user.sketches.count
+                %li= link_to "Edit User", edit_user_registration_path
+                %li.divider{role: "separator"}
+                %li= link_to "Log Out", destroy_user_session_path, method: :delete
+          - else
+            %li= link_to "Sign In", new_user_session_path
+            |
+            %li= link_to "Register", new_user_registration_path
     - if flash[:notice]
       .alert.alert-success
         %button.close{"data-dismiss" => "alert", type: "button"} ×
