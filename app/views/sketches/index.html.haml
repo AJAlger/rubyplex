@@ -1,7 +1,6 @@
 %section#sketches
-  this is the sketches page
   - if @sketches.empty?
-    = @sketches.count
     No Sketches
   - else
-    = @sketches.count
+    = "You have #{@sketches.count} sketches"
+
