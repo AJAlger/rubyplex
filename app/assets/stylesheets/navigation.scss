@@ -12,8 +12,12 @@ body {
 
   .navbar-right {
     font-size: 1em;
-  }
+    padding-right: 30px;
 
+    .list-inline {
+      margin: 10px 60px 0 0;
+    }
+  }
 }
 
 .alert {
