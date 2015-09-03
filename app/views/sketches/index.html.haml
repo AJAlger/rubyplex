@@ -1,8 +1,10 @@
-%section#sketches
-  - if @sketches.empty?
-    No Sketches
-  - else
-    = "You have #{@sketches.count} sketches"
-    - @sketches.each do |sketch|
-      = sketch.title
-
+%section#sketches.container-fluid
+  .row
+    .col-md-6
+      - if @sketches.empty?
+        No Sketches
+      - else
+        %p= "You have #{@sketches.count} sketches"
+        - @sketches.each do |sketch|
+          %span
+            = sketch.title

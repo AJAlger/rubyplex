@@ -4,7 +4,6 @@ class SketchPolicy < ApplicationPolicy
   end
 
   def show?
-    !record.private? || user.present?
   end
 
   def destroy?
