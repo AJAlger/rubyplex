@@ -10,24 +10,8 @@ body {
   border: none;
   margin-bottom: 0;
 
-  .navbar-nav, .user-info {
+  .navbar-right {
     font-size: 1em;
-    color: red;
-
-    a {
-      color: steelblue;
-    }
-  }
-
-  .navbar-nav {
-  }
-
-  .user-info {
-    margin-right: 50px;
-    padding: 10px 0;
-    span {
-      margin-left: 10px;
-    }
   }
 
 }
