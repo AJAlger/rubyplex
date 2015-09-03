@@ -10,22 +10,22 @@
     %nav.navbar.navbar-default
       .navbar-header
         = image_tag "rubyplex-nav-design.jpg"
-      .collapse.navbar-collapse
-        %ul.nav.navbar-right
-          - if user_signed_in?
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                = current_user.name
-                %span.caret
-              %ul.dropdown-menu
-                %li{role: "presentation"}
-                  = link_to sketches_path do
-                    Sketches
-                    %span.badge= current_user.sketches.count
-                %li= link_to "Edit User", edit_user_registration_path
-                %li.divider{role: "separator"}
-                %li= link_to "Log Out", destroy_user_session_path, method: :delete
-          - else
+      %ul.nav.navbar-right
+        - if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              = current_user.name
+              %span.caret
+            %ul.dropdown-menu
+              %li{role: "presentation"}
+                = link_to sketches_path do
+                  Sketches
+                  %span.badge= current_user.sketches.count
+              %li= link_to "Edit User", edit_user_registration_path
+              %li.divider{role: "separator"}
+              %li= link_to "Log Out", destroy_user_session_path, method: :delete
+        - else
+          .list-inline
             %li= link_to "Sign In", new_user_session_path
             |
             %li= link_to "Register", new_user_registration_path
