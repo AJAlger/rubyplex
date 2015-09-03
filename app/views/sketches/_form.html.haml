@@ -1,21 +1,21 @@
-= form_for @sketch do |f|
+= form_for sketch do |f|
+
   #code-editor
     .container-fluid
       .row
         = f.label :title
         = f.text_field :title
         #editor
-          = @sketch.body
-        = f.hidden_field :body, id: "input_value", value: ""
+          = f.text_area :body
 
   #code-results
     .container-fluid
       .row
         #buttons
-          %button#submit-button.btn.btn-default{type: "button"} Run
-          %button#clear-editor-button.btn.btn-default{type: "button"} Clear Editor
-          %button#clear-console-button.btn.btn-default{type: "button"} Clear Console
-          = f.submit "Save Sketch", class: "btn btn-default", onclick: "infoStore()"
+          %button#submit-button.btn.btn-default{type: "submit"} Run
+          %button#clear-editor-button.btn.btn-default{type: "submit"} Clear Editor
+          %button#clear-console-button.btn.btn-default{type: "submit"} Clear Console
+          = f.submit "Save Sketch", class: "btn btn-default"
         #results
 
 %script{type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.min.js", charset: "utf-8"}
@@ -29,6 +29,3 @@
   editor.getSession().setTabSize(2);
   editor.setReadOnly(false);
   editor.setHighlightActiveLine(true);
-  var infoStore = function() {document.getElementById("input_value").value = editor.getValue();
-  };
-  console.log(infoStore);

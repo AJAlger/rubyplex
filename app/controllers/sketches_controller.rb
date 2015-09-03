@@ -17,11 +17,10 @@ class SketchesController < ApplicationController
 
   def create
     @sketch = current_user.sketches.build(sketch_params)
-    authorize @sketch
 
     if @sketch.save
       flash[:notice] = "Sketch was saved."
-      redirect_to @sketch
+      redirect_to sketches_path
     else
       flash[:error] = "Wasn't saved Dave!"
       render :new
