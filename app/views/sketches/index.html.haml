@@ -3,4 +3,6 @@
     No Sketches
   - else
     = "You have #{@sketches.count} sketches"
+    - @sketches.each do |sketch|
+      = sketch.title
 
