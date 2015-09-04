@@ -7,7 +7,6 @@ feature "User views his/her Sketches" do
     user = create(:user)
     sketch_one = create(:sketch, user: user, title: "sketch one")
     sketch_two = create(:sketch, user: user, title: "sketch two")
-    save_and_open_page
 
     visit new_user_session_path
 
