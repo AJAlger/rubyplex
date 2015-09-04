@@ -7,6 +7,7 @@ feature "User views his/her Sketches" do
     user = create(:user)
     sketch_one = create(:sketch, user: user, title: "sketch one")
     sketch_two = create(:sketch, user: user, title: "sketch two")
+    save_and_open_page
 
     visit new_user_session_path
 
@@ -14,12 +15,16 @@ feature "User views his/her Sketches" do
     fill_in "Password", with: user.password
     click_button "Log in"
 
-    expect(current_path).to eq root_path
+    expect(current_path).to eq new_sketch_path
     expect(page).to have_content(user.name)
+    expect(page).to have_button("Save Sketch")
 
-    click_link("Number of sketches")
+    within ".dropdown" do
+      click_link "Sketches"
+    end
 
     expect(current_path).to eq sketches_path
+    expect(page).to have_content "You have 2 sketches"
     expect(page).to have_link(sketch_one.title)
     expect(page).to have_link(sketch_two.title)
 
