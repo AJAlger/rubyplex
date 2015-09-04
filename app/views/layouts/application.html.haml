@@ -18,7 +18,7 @@
               %span.caret
             %ul.dropdown-menu
               %li{role: "presentation"}
-                = link_to sketches_path do
+                = link_to sketches_index_path(current_user.username) do
                   Sketches
                   %span.badge= current_user.sketches.count
               %li= link_to "Edit Profile", edit_user_registration_path
