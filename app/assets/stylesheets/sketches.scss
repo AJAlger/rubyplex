@@ -74,17 +74,28 @@
 section#sketches {
   margin-top: 20px;
 
-  .sketch-container {
+  .sketch-boxes-container {
 
     .sketch-count {
 
 
     }
-
-    .sketch-boxes-container {
+    .sketch-container {
 
       .sketch-box {
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid black;
+        width: 200px;
+        height: 200px;
 
+        .title {
+          text-align: center;
+          }
+
+        .sketch-image {
+
+        }
       }
     }
   }
