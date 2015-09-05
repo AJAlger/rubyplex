@@ -79,9 +79,15 @@ section#sketches {
     margin-bottom: 10px;
   }
   .panel-heading {
-    background-color: #44a7e3;
+    background-color: #E8E8E8;
     background-image: none;
-    color: white;
+    color: black;
+    padding: 20px;
+
+    .btn {
+      margin-top: -5px;
+    }
+
   }
   .panel-body {
     #editor-index {
