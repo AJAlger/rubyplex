@@ -4,13 +4,17 @@
 
 #code-editor, #code-results  {
   width: 50%;
-  height: 100%;
   float: left;
+  position: relative;
 }
 
-#editor, #results {
-  position: relative;
-  height: 100vh;
+.index-page {
+  height: 92.6vh;
+  padding: 0;
+}
+
+.save-page {
+  height: 88.8vh;
   padding: 0;
 }
 
@@ -64,7 +68,7 @@
     }
 
     &:hover {
-      color: red;
+      background-color: transparent;
     }
 
   }
@@ -74,33 +78,24 @@
 section#sketches {
   margin-top: 20px;
 
-  .sketch-boxes-container {
+  .panel > .panel-heading {
+    background-color: #44a7e3;
+    background-image: none;
+    color: white;
 
-    .sketch-count {
+    .panel-body {
 
-
-    }
-    .sketch-container {
-
-      .sketch-box {
-        padding: 10px;
-        margin: 10px;
-        border: 2px solid black;
-        width: 200px;
-        height: 200px;
-
-        .title {
-          text-align: center;
-          }
-
-        .sketch-image {
-
-        }
+      #editor {
+        height: 300px;
+        padding: 0;
+        position: relative;
       }
-    }
-  }
-}
 
+    }
+
+  }
+
+}
 
 
 

@@ -7,13 +7,16 @@ feature "User creates a sketch" do
     user = create(:user)
     login_as(user, scope: :user)
 
-    visit new_sketch_path
+    visit new_sketch_path(user)
 
     expect(page).to have_content("Title")
     expect(page).to have_button("Save Sketch")
 
     fill_in "Title", with: "A new sketch"
-    find(:xpath, "//input[@id='input_value']").set "puts 'hello'"
+    fill_in
+
+    expect(page).to have_content "puts 'hello'"
+
     click_button "Save Sketch"
 
     expect(current_path).to eq sketches_path

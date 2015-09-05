@@ -19,10 +19,11 @@ class SketchesController < ApplicationController
 
   def create
     @sketch = current_user.sketches.build(sketch_params)
+    authorize @sketch
 
     if @sketch.save
       flash[:notice] = "Sketch was saved."
-      redirect_to sketches_path
+      redirect_to sketches_index_path(current_user.username)
     else
       flash[:error] = "Wasn't saved Dave!"
       render :new
@@ -31,11 +32,22 @@ class SketchesController < ApplicationController
   end
 
   def edit
-
+    user = User.find_by(username: params[:username])
+    @sketch = user.sketches.find_by!(slug: params[:slug])
+    authorize @sketch
   end
 
   def update
+    user = User.find_by(username: params[:username])
+    @sketch = user.sketches.find_by!(slug: params[:slug])
+    authorize @sketch
 
+    if @sketch.update_attributes(sketch_params)
+      flash[:notice] = "Sketch was updated."
+      redirect_to sketches_index_path(current_user.username)
+    else
+      flash[:error] = "An error occurred when updating the sketch"
+    end
   end
 
   def destroy
