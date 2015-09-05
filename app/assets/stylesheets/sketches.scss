@@ -66,35 +66,28 @@
       box-shadow: none;
       outline: 0 none;
     }
-
     &:hover {
       background-color: transparent;
     }
-
   }
-
 }
 
 section#sketches {
   margin-top: 20px;
 
-  .panel > .panel-heading {
+  .panel {
+    margin-bottom: 10px;
+  }
+  .panel-heading {
     background-color: #44a7e3;
     background-image: none;
     color: white;
-
-    .panel-body {
-
-      #editor {
-        height: 300px;
-        padding: 0;
-        position: relative;
-      }
-
-    }
-
   }
-
+  .panel-body {
+    #editor-index {
+      height: 300px;
+    }
+  }
 }
 
 
