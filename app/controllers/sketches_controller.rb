@@ -56,7 +56,7 @@ class SketchesController < ApplicationController
     authorize @sketch
 
     if @sketch.destroy
-      flash[:notice] = "Your sketch was deleted."
+      flash[:notice] = "Your sketch has been deleted."
       redirect_to sketches_index_path(current_user.username)
     else
       flash[:error] = "There was an error deleting this sketch."
