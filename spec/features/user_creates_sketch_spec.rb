@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User creates a sketch" do
+feature "User creates a sketch", js: true do
 
   scenario "successfully" do
 
