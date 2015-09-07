@@ -79,16 +79,6 @@ section#sketches {
     margin: 20px 0;
   }
 
-    .panel-button-bar {
-      display: inline-block;
-      width: 100%;
-
-      .btn {
-        float: right;
-      }
-
-    }
-
     .panel {
       margin-bottom: 40px;
     }
@@ -96,12 +86,11 @@ section#sketches {
     .panel-heading {
       background-color: #E8E8E8;
       background-image: none;
-      color: black;
       padding: 20px;
-
     }
+
     .panel-body {
-      #editor-index {
+      .editor {
         height: 300px;
       }
     }
