@@ -30,6 +30,9 @@ end
 
 group :test do
   gem 'email_spec'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'chromedriver-helper'
 end
 
 group :production do
