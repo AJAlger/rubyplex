@@ -5,27 +5,31 @@
       - if @sketches.empty?
         No Sketches
       - else
-        = "You currently have #{@sketches.count} sketches"
+        .total-sketches
+          = "You currently have #{@sketches.count} sketches"
         - @sketches.each do |sketch|
+          .panel-button-bar
+            Share link:
+            = request.original_url + "/" + sketch.slug
+            = link_to "Delete", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right", id: "delete-sketch"
           .panel.panel-default
             .panel-heading
-              = link_to "", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right", id: "delete-sketch"
               .panel-title
                 = sketch.title
             .panel-body
               %pre#editor-index.editor
                 = sketch.body
 
+
 :javascript
   $(document).ready(function() {
     // workaround from http://stackoverflow.com/questions/15662337/can-ace-editor-support-multiple-code-editors-in-one-page
     var editor;
     $('.editor').each(function() {
-      editor = ace.edit(this);
-      editor.setTheme("ace/theme/terminal");
-      editor.getSession().setMode("ace/mode/ruby");
-      editor.getSession().setTabSize(2);
-      editor.setReadOnly(true);
+        editor = ace.edit(this);
+        editor.setTheme("ace/theme/terminal");
+        editor.getSession().setMode("ace/mode/ruby");
+        editor.getSession().setTabSize(2);
+        editor.setReadOnly(true);
     });
   });
-

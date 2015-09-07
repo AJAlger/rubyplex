@@ -75,25 +75,39 @@
 section#sketches {
   margin-top: 20px;
 
-  .panel {
-    margin-bottom: 10px;
+  .total-sketches {
+    margin: 20px 0;
   }
-  .panel-heading {
-    background-color: #E8E8E8;
-    background-image: none;
-    color: black;
-    padding: 20px;
 
-    .btn {
-      margin-top: -5px;
+    .panel-button-bar {
+      display: inline-block;
+      width: 100%;
+
+      .btn {
+        float: right;
+      }
+
     }
 
-  }
-  .panel-body {
-    #editor-index {
-      height: 300px;
+    .panel {
+      margin-bottom: 40px;
     }
-  }
+
+    .panel-heading {
+      background-color: #E8E8E8;
+      background-image: none;
+      color: black;
+      padding: 20px;
+
+    }
+    .panel-body {
+      #editor-index {
+        height: 300px;
+      }
+    }
+
+
+
 }
 
 
