@@ -9,7 +9,7 @@
         - @sketches.each do |sketch|
           .panel.panel-default
             .panel-heading
-              .btn.btn-danger.glyphicon.glyphicon-trash.pull-right
+              = link_to "", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right"
               .panel-title
                 = sketch.title
             .panel-body

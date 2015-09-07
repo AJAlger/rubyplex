@@ -51,7 +51,18 @@ class SketchesController < ApplicationController
   end
 
   def destroy
+    user = User.find_by(username: params[:username])
+    @sketch = user.sketches.find_by!(slug: params[:slug])
+    authorize @sketch
 
+    if @sketch.destroy
+      flash[:notice] = "Your sketch was deleted."
+      redirect_to sketches_index_path(current_user.username)
+    else
+      flash[:error] = "There was an error deleting this sketch."
+      render :show
+      # I would like to make this to render the page the user is currently on. If the user is on the index and an error occurs, then render the index. If on the show page, then render the show page.
+    end
   end
 
   private
