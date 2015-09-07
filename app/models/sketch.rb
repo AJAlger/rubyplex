@@ -4,6 +4,8 @@ class Sketch < ActiveRecord::Base
 
   before_create :generate_slug
 
+
+
   private
 
   def generate_slug

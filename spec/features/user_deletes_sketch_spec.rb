@@ -13,6 +13,7 @@ feature "User deletes a sketch" do
     expect(page).to have_content(sketch.body)
     click_link "delete-sketch"
     expect(page).to have_content "Your sketch has been deleted."
+    expect(page).not_to have_content(sketch.body)
 
   end
 
