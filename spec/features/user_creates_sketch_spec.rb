@@ -7,7 +7,7 @@ feature "User creates a sketch" do
     user = create(:user)
     login_as(user, scope: :user)
 
-    visit new_sketch_path(user)
+    visit new_sketch_path
 
     expect(page).to have_content("Title")
     expect(page).to have_button("Save Sketch")
