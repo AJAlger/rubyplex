@@ -8,18 +8,16 @@
         .total-sketches
           = "You currently have #{@sketches.count} sketches"
         - @sketches.each do |sketch|
-          .panel-button-bar
-            Share link:
-            = request.original_url + "/" + sketch.slug
-            = link_to "Delete", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right", id: "delete-sketch"
           .panel.panel-default
             .panel-heading
               .panel-title
-                = sketch.title
+                Share link:
+                = request.original_url + "/" + sketch.slug
+                = link_to "Delete", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right", id: "delete-sketch"
             .panel-body
-              %pre#editor-index.editor
+              = sketch.title
+              %pre.editor
                 = sketch.body
-
 
 :javascript
   $(document).ready(function() {
