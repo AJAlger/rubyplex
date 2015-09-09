@@ -21,7 +21,7 @@ feature "User creates a sketch", js: true do
 
     expect(current_path).to eq sketches_index_path(user.username)
     expect(page).to have_content "A new sketch"
-    expect(page).to have_editor_display "puts 'new sketch'"
+    expect(page).to have_editor_display text: "puts 'new sketch'"
     expect(page).to have_content "You currently have 1 sketch"
 
   end
