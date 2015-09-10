@@ -19,14 +19,8 @@ module Rubyplex
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
 
-    root.join('vendor', 'assets', 'bower_components').to_s.tap do |bower_path|
-      config.sass.load_paths << bower_path
-      config.assets.paths << bower_path
-    end
-# Precompile Bootstrap fonts
-    config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
-# Minimum Sass number precision required by bootstrap-sass
-    ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    # via https://gist.github.com/afeld/5704079
 
     # We don't want the default of everything that isn't js or css, because it pulls too many things in
     config.assets.precompile.shift

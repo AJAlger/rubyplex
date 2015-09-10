@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require event
 //= require webruby
 //= require turbolinks
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
