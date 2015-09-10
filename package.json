@@ -1,0 +1,23 @@
+{
+  "name": "rubyplex",
+  "version": "1.0.0",
+  "description": "```bash git clone your-fork-of-the-repo",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdullahAlger/rubyplex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbdullahAlger/rubyplex/issues"
+  },
+  "homepage": "https://github.com/AbdullahAlger/rubyplex#readme"
+}
