@@ -12,7 +12,7 @@
             .panel-heading
               .panel-title
                 Share link:
-                = request.original_url + "/" + sketch.slug
+                = link_to request.original_url + "/" + sketch.slug, sketch_edit_path(sketch.user.username, sketch.slug)
                 = link_to "Delete", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right", id: "delete-sketch"
             .panel-body
               = sketch.title

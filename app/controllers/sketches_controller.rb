@@ -1,6 +1,6 @@
 class SketchesController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     user = User.find_by(username: params[:username])
