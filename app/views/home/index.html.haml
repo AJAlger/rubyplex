@@ -14,12 +14,10 @@
         #results
 
 :javascript
-  $(document).ready(function() {
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/terminal");
-    editor.getSession().setMode("ace/mode/ruby");
-    editor.getSession().setTabSize(2);
-    editor.setReadOnly(false);
-    editor.getSession().setUseWrapMode(true);
-    editor.setHighlightActiveLine(true);
-  });
+   var editor = ace.edit("editor");
+   editor.setTheme("ace/theme/terminal");
+   editor.getSession().setMode("ace/mode/ruby");
+   editor.getSession().setTabSize(2);
+   editor.setReadOnly(false);
+   editor.getSession().setUseWrapMode(true);
+   editor.setHighlightActiveLine(true);
