@@ -13,7 +13,7 @@ feature "User edits a sketch", js: true do
 
     click_link (user.username + "/" + sketch.slug)
 
-    #expect(current_path).to eq sketch_edit_path(user.username, sketch.slug)
+    expect(current_path).to eq sketch_edit_path(user.username, sketch.slug)
 
     expect(page).to have_content("Title")
     expect(page).to have_button("Save Sketch")
