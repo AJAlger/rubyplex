@@ -7,7 +7,7 @@ class Sketch < ActiveRecord::Base
   private
 
   def generate_slug
-    self.slug = SecureRandom.urlsafe_base64(10)
+    self.slug = SecureRandom.hex(10)
   end
 
 end
