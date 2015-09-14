@@ -11,7 +11,7 @@ feature "User edits a sketch", js: true do
     visit sketches_index_path(user.username)
     expect(page).to have_content(sketch.body)
 
-    click_link (user.username + "/" + sketch.slug)
+    click_link(user.username + "/" + sketch.slug)
 
     expect(current_path).to eq sketch_edit_path(user.username, sketch.slug)
 
