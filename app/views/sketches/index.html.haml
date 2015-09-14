@@ -12,8 +12,11 @@
             .panel-heading
               .panel-title
                 Share link:
-                = link_to sketch_show_path(sketch.user.username, sketch.slug), sketch_edit_path(sketch.user.username, sketch.slug)
-                = link_to "Delete", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right", id: "delete-sketch"
+                - if policy(sketch).edit?
+                  = link_to sketch_show_path(sketch.user.username, sketch.slug), sketch_edit_path(sketch.user.username, sketch.slug)
+                  = link_to "Delete", sketch_delete_path(sketch.user.username, sketch.slug), method: :delete, class: "btn btn-danger glyphicon glyphicon-trash pull-right", id: "delete-sketch"
+                - else
+                  = link_to sketch_show_path(sketch.user.username, sketch.slug), sketch_show_path(sketch.user.username, sketch.slug)
             .panel-body
               = sketch.title
               %pre.editor
