@@ -6,6 +6,10 @@ class SketchPolicy < ApplicationPolicy
   def show?
   end
 
+  def edit?
+    destroy?
+  end
+
   def destroy?
     user.present? && (record.user == user || user.admin?)
   end
