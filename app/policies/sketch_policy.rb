@@ -6,6 +6,10 @@ class SketchPolicy < ApplicationPolicy
   def show?
   end
 
+  def new?
+    edit?
+  end
+
   def edit?
     destroy?
   end
