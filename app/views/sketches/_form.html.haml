@@ -1,11 +1,28 @@
 #sketch-view
-  = form_for sketch do |f|
+
+  - if sketch.new_record? && policy(sketch).create?
+    - url = sketches_path
+    - method = :post
+    - read_only = false
+  - elsif policy(sketch).edit?
+    - url = sketch_update_path(sketch.user.username, sketch.slug)
+    - method = :patch
+    - read_only = false
+  - else
+    - url = sketch_show_path(sketch.user.username, sketch.slug)
+    - method = :get
+    - read_only = true
+
+  = form_for(sketch, url: url, method: method) do |f|
     #code-editor
       .container-fluid
         .row
-          = f.label :title
-          = f.text_field :title, placeholder: "Sketch description ..."
-          #editor.save-page
+          - if read_only
+            = sketch.title
+          - else
+            = f.label :title
+            = f.text_field :title, placeholder: "Sketch description ..."
+          .editor.save-page
           = f.text_area :body, id: "input_value"
 
     #code-results
@@ -13,19 +30,27 @@
         .row
           #buttons
             %button#submit-button.btn.btn-default{type: "button"} Run
-            %button#clear-editor-button.btn.btn-default{type: "button"} Clear Editor
-            %button#clear-console-button.btn.btn-default{type: "button"} Clear Console
-            = f.submit "Save Sketch", class: "btn btn-default", onclick: "infoStore()"
+            - if !read_only
+              %button#clear-editor-button.btn.btn-default{type: "button"} Clear Editor
+              %button#clear-console-button.btn.btn-default{type: "button"} Clear Console
+              = f.submit "Save Sketch", class: "btn btn-default", onclick: "infoStore()"
           #results
 
 :javascript
-  var editor = ace.edit("editor");
-  var textarea = $('textarea[id="input_value"]').hide();
-  editor.getSession().setValue(textarea.val());
-  editor.setTheme("ace/theme/terminal");
-  editor.getSession().setMode("ace/mode/ruby");
-  editor.getSession().setTabSize(2);
-  editor.getSession().setUseWrapMode(true);
+  var editor;
   var infoStore = function() {
     document.getElementById("input_value").value = editor.getValue();
   };
+  $(document).ready(function() {
+    // workaround from http://stackoverflow.com/questions/15662337/can-ace-editor-support-multiple-code-editors-in-one-page
+    $('.editor').each(function() {
+        editor = ace.edit(this);
+        var textarea = $('textarea[id="input_value"]').hide();
+        editor.getSession().setValue(textarea.val());
+        editor.setTheme("ace/theme/terminal");
+        editor.getSession().setMode("ace/mode/ruby");
+        editor.getSession().setTabSize(2);
+        editor.setReadOnly(#{read_only});
+        editor.getSession().setUseWrapMode(true);
+     });
+  });

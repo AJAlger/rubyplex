@@ -1,26 +1,28 @@
-#sketch-view
-  = form_for(@sketch, url: sketch_update_path) do |f|
-    #code-editor
-      .container-fluid
-        .row
-          = f.label @sketch.title
-          #editor.save-page
-          = f.text_area :body, id: "input_value"
+= render partial: "form", locals: {sketch: @sketch}
 
-    #code-results
-      .container-fluid
-        .row
-          #buttons
-            %button#submit-button.btn.btn-default{type: "button"} Run
-          #results
-
-:javascript
-  var editor = ace.edit("editor");
-  var textarea = $('textarea[id="input_value"]').hide();
-  editor.getSession().setValue(textarea.val());
-  editor.setTheme("ace/theme/terminal");
-  editor.getSession().setMode("ace/mode/ruby");
-  editor.getSession().setTabSize(2);
-  editor.getSession().setUseWrapMode(true);
-  editor.setReadOnly(true);
+-##sketch-view
+-#  = form_for(@sketch, url: sketch_update_path) do |f|
+-#    #code-editor
+-#      .container-fluid
+-#        .row
+-#          = f.label @sketch.title
+-#          #editor.save-page
+-#          = f.text_area :body, id: "input_value"
+-#
+-#    #code-results
+-#      .container-fluid
+-#        .row
+-#          #buttons
+-#            %button#submit-button.btn.btn-default{type: "button"} Run
+-#          #results
+-#
+-#:javascript
+-#  var editor = ace.edit("editor");
+-#  var textarea = $('textarea[id="input_value"]').hide();
+-#  editor.getSession().setValue(textarea.val());
+-#  editor.setTheme("ace/theme/terminal");
+-#  editor.getSession().setMode("ace/mode/ruby");
+-#  editor.getSession().setTabSize(2);
+-#  editor.getSession().setUseWrapMode(true);
+-#  editor.setReadOnly(true);
 
