@@ -1,18 +1,5 @@
 #sketch-view
 
-  - if sketch.new_record? && policy(sketch).create?
-    - url = sketches_path
-    - method = :post
-    - read_only = false
-  - elsif policy(sketch).edit?
-    - url = sketch_update_path(sketch.user.username, sketch.slug)
-    - method = :patch
-    - read_only = false
-  - else
-    - url = sketch_show_path(sketch.user.username, sketch.slug)
-    - method = :get
-    - read_only = true
-
   = form_for(sketch, url: url, method: method) do |f|
     #code-editor
       .container-fluid
