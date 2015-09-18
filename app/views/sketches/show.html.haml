@@ -1,1 +1,1 @@
-= render partial: "form", locals: {sketch: @sketch, url: sketch_show_path(sketch.user.username, sketch.slug), method: :get, read_only: true}
+= render partial: "form", locals: {sketch: @sketch, url: sketch_show_path(@sketch.user.username, @sketch.slug), methods: :get, read_only: true}

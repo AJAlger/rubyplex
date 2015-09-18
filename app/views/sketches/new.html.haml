@@ -1,1 +1,2 @@
-= render partial: "form", locals: {sketch: @sketch, url: new_sketch_path, method: :post, read_only: false}
+- if @sketch.new_record? && policy(@sketch).create?
+  = render partial: "form", locals: {sketch: @sketch, url: new_sketch_path, methods: :post, read_only: false}
