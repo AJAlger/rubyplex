@@ -22,10 +22,10 @@ feature "User views his/her Sketches" do
       click_link "Sketches"
     end
 
-    expect(current_path).to eq sketches_path
-    expect(page).to have_content "You have 2 sketches"
-    expect(page).to have_link(sketch_one.title)
-    expect(page).to have_link(sketch_two.title)
+    expect(current_path).to eq sketches_index_path(user.username)
+    expect(page).to have_content "You currently have 2 sketches"
+    expect(page).to have_content(sketch_one.title)
+    expect(page).to have_content(sketch_two.title)
 
   end
 
