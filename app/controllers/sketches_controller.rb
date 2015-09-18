@@ -61,7 +61,6 @@ class SketchesController < ApplicationController
     else
       flash[:error] = "There was an error deleting this sketch."
       render :show
-      # I would like to make this to render the page the user is currently on. If the user is on the index and an error occurs, then render the index. If on the show page, then render the show page.
     end
   end
 
