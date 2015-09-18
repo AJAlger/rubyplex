@@ -2,7 +2,7 @@
 
 So, I got tired of writing Ruby in Sublime, or my IDE, and testing it in the terminal, or in IRB. Therefore, I got inspired by the [Webruby project](https://github.com/xxuejie/mruby-web-irb) by @xxuejie and decided to make my own Ruby editor in the browser. The benefit of this browser is that it is a cross between [JSBin](http://jsbin.com) and Github's Gists in that it let's you code, run your code, save your code, share your code, and let others run your code. 
 
-I am open to contributions that are tested, but give it a go and have fun! [Try RubyPlex!](http://rubyplex.com)
+I am open to contributions that are tested, but give it a go and have fun! [Try RubyPlex!](http://rubyplex.com(
 
 # New Developer Environment Setup
 
