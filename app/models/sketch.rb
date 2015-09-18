@@ -4,6 +4,8 @@ class Sketch < ActiveRecord::Base
 
   before_create :generate_slug
 
+  validates :title, length: { minimum: 1 }, presence: true
+
   private
 
   def generate_slug

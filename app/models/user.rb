@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :sketches, dependent: :destroy
 
   validates :role, presence: true, inclusion: { in: %w{standard pro admin}, message: "should be one of admin, pro, standard" }
+  validates :username, length: { minimum: 3}, presence: true
+  validates :name, length: {minimum: 3}, presence: true
 
   def admin?
     role == "admin"
