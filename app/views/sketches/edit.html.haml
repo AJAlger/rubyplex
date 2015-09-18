@@ -1,2 +1,2 @@
 - if policy(@sketch).edit?
-  = render partial: "form", locals: {sketch: @sketch, url: sketch_update_path(@sketch.user.username, @sketch.slug), methods: :patch, read_only: false}
+  = render partial: "form", locals: {sketch: @sketch, url: sketch_update_path(@sketch.user.username, @sketch.slug), method: :patch, read_only: false}
