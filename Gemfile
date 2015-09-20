@@ -13,6 +13,7 @@ gem 'figaro', '1.0'
 gem 'haml'
 gem 'bourbon'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'opal-rails'
 
 group :development, :test do
   gem 'byebug'
