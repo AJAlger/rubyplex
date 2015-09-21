@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
+  resources :administrator
   resources :users
   resources :sketches, only: [:new, :create]
 
