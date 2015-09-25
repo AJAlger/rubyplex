@@ -31,7 +31,6 @@
 
             //webruby.run_source(editor.getValue());
 
-
             console.log = window.Module['print'];
 
             Opal.Kernel.$eval(editor.getValue());
