@@ -5,6 +5,8 @@ So, I got tired of writing Ruby in Sublime, or my IDE, and testing it in the ter
 
 I am open to contributions that are tested, but give it a go and have fun! [Try RubyPlex!](http://rubyplex.com)
 
+- Update: This project will discontinue using Webruby and is now currently moving to Opal.
+
 # New Developer Environment Setup
 
 ```bash
