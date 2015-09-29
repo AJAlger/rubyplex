@@ -1,5 +1,5 @@
 (function () {
-    var lines = [], printed = false;// webruby, load_string_func;
+    var lines = [], printed = false // webruby, load_string_func;
 
     // Taken from http://stackoverflow.com/a/901144
     function getParameterByName(name) {
@@ -23,15 +23,17 @@
     };
 
     $(document).ready(function() {
-        webruby = new WEBRUBY({print_level: getQueryLevel()});
+        //webruby = new WEBRUBY({print_level: getQueryLevel()});
 
         $("#submit-button").click(function() {
             lines = [];
             printed = false;
 
-            webruby.run_source(editor.getValue());
+            //webruby.run_source(editor.getValue());
 
-            Opal.load(editor.getValue());
+            console.log = window.Module['print'];
+
+            Opal.Kernel.$eval(editor.getValue());
 
             if (!printed) {
                 window.Module['print']('<small><i>(no output)</i></small>');
@@ -52,7 +54,7 @@
         });
 
         window.onbeforeunload = function () {
-            //webruby.close();
+           // webruby.close();
         }
     });
 }());
