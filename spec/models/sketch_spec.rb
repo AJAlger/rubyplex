@@ -7,12 +7,18 @@ RSpec.describe Sketch, type: :model do
   end
 
   context "#initialize" do
-    it "should have a slug" do
-    end
-
-    it "it should have a slug that's a hex number" do
+    xit "it should have a slug that's a hex number" do
 
     end
+  end
+
+  context "sketch title validation" do
+    it "should have a valid title" do
+      @sketch.title = ""
+      expect(@sketch.valid?).to eq false
+      expect(@sketch.errors[:title]).to include "can't be blank"
+    end
+
   end
 
 end
