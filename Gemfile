@@ -26,8 +26,8 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'rspec-rails', '~> 3.0'
   gem 'puma'
-  gem 'pry-rails'
   gem 'faker'
+  gem 'brakeman', :require => false
 end
 
 group :test do
