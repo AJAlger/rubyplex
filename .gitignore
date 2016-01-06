@@ -20,5 +20,5 @@
 .DS_Store
 
 vendor/assets/components
-/config/application.yml
+config/application.yml
 node_modules
