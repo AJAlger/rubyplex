@@ -6,13 +6,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '5098577d1f41b0131563556f57cc09bcd0db5135430bb9eb18851a49cfe1a151ae81a67ecf3c3a476843c6b213fe94d0aa4708f21910b393a7b941ffff8464df'
+  # config.secret_key = '2d06b82a14a5fee55f67f23fd2c680dcddfedfedb94c4d61f1e880b73de7ac1b7bc70bd11df6f0f6b6ef5b53cc12184f7a9fa160735b390552038884c4c5cbf3'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'abdullahalger@me.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -99,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '55bdad46cceae55a541a49c9eb52232a9e337b71490a0f022b25d9cda46d3db2c80b3a43397bd45ba76854d39395f813a4e9d9d1cde8ae78d9e00d55587bbeb8'
+  # config.pepper = '9acacb3bdc2b2efeb8d64d45d2e86a08f521b523cf129736b2f252a045e493c81902dc40063ec45c984a978e6ef5a7b88f0f96cbed66b76df1783ab334a00a1a'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -152,13 +152,13 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-   config.timeout_in = 30.minutes
+  # config.timeout_in = 30.minutes
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
-   config.lock_strategy = :failed_attempts
+  # config.lock_strategy = :failed_attempts
 
   # Defines which key will be used when locking and unlocking an account
   # config.unlock_keys = [:email]
