@@ -23,17 +23,17 @@
     };
 
     $(document).ready(function() {
-        //webruby = new WEBRUBY({print_level: getQueryLevel()});
+        webruby = new WEBRUBY({print_level: getQueryLevel()});
 
         $("#submit-button").click(function() {
             lines = [];
             printed = false;
 
-            //webruby.run_source(editor.getValue());
+            webruby.run_source(editor.getValue());
 
             console.log = window.Module['print'];
 
-            Opal.Kernel.$eval(editor.getValue());
+            //Opal.Kernel.$eval(editor.getValue());
 
             if (!printed) {
                 window.Module['print']('<small><i>(no output)</i></small>');
@@ -54,7 +54,7 @@
         });
 
         window.onbeforeunload = function () {
-           // webruby.close();
+            webruby.close();
         }
     });
 }());
