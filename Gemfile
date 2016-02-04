@@ -17,17 +17,20 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'capybara'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails', '~> 4.5'
   gem 'rspec-rails', '~> 3.0'
   gem 'puma'
   gem 'faker'
   gem 'brakeman', :require => false
+end
+
+group :development do
+  gem 'web-console', '~> 3.0'
 end
 
 group :test do
