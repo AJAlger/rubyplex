@@ -1,5 +1,5 @@
 (function () {
-    var lines = [], printed = false // webruby, load_string_func;
+    var lines = [], printed = false, webruby, load_string_func;
 
     // Taken from http://stackoverflow.com/a/901144
     function getParameterByName(name) {
@@ -32,8 +32,6 @@
             webruby.run_source(editor.getValue());
 
             console.log = window.Module['print'];
-
-            //Opal.Kernel.$eval(editor.getValue());
 
             if (!printed) {
                 window.Module['print']('<small><i>(no output)</i></small>');

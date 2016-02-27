@@ -9,8 +9,6 @@
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/theme-terminal.js"
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/mode-ruby.js"
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"
-    = javascript_include_tag "http://cdn.opalrb.org/opal/current/opal.js"
-    = javascript_include_tag "http://cdn.opalrb.org/opal/current/opal-parser.js"
     %script Opal.load('opal-parser');
     = csrf_meta_tags
   %body
@@ -27,6 +25,7 @@
                 = link_to sketches_index_path(current_user.username) do
                   Sketches
                   %span.badge= current_user.sketches.count
+              %li=link_to "New Sketch", new_sketch_path
               %li= link_to "Edit Profile", edit_user_registration_path
               - if current_user.admin?
                 %li= link_to "Site Administration"
