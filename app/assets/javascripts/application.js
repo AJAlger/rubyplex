@@ -10,11 +10,9 @@
 //# // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 //# // about supported directives.
 
-//= require 'opal'
-//= require 'opal_ujs'
 //= require 'jquery'
 //= require 'bootstrap-sprockets'
 //= require 'jquery_ujs'
-//#//= require 'event'
-//#//= require 'webruby'
+//= require 'event'
+//= require 'webruby'
 //= require 'turbolinks'
