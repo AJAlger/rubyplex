@@ -36,7 +36,8 @@
         editor.setTheme("ace/theme/terminal");
         editor.getSession().setMode("ace/mode/ruby");
         editor.getSession().setTabSize(2);
-        editor.setReadOnly(#{read_only});
         editor.getSession().setUseWrapMode(true);
+        editor.$blockScrolling = Infinity;
+        editor.setReadOnly();
      });
   });

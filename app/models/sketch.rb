@@ -5,6 +5,9 @@ class Sketch < ActiveRecord::Base
   before_create :generate_slug
 
   validates :title, length: { minimum: 1 }, presence: true
+  validates :body, presence: true
+
+  default_scope { order("created_at DESC")}
 
   private
 
