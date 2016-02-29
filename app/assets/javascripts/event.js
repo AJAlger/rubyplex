@@ -22,7 +22,7 @@
         printed = true;
     };
 
-    $(document).ready(function() {
+    function ready() {
         webruby = new WEBRUBY({print_level: getQueryLevel()});
 
         $("#submit-button").click(function() {
@@ -49,5 +49,15 @@
         window.onbeforeunload = function () {
             webruby.close();
         }
-    });
+    }
+
+    $(document).ready(ready);
+    $(document).on("page:load", ready);
+
+
+    // weird workaround for jQuery. It was not loading initially and you'd have to
+    // refresh the page before any jQuery would work. Apparently, it is a turbolinks issue.
+
+    // http://stackoverflow.com/questions/17317816/rails-javascript-only-works-after-reload
+
 }());
