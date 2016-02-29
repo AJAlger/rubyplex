@@ -1,5 +1,6 @@
 body {
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
 }
 
 .navbar {
@@ -10,11 +11,12 @@ body {
   border-radius: 0;
 
   a {
-    color: #6cbae9;
+    color: white;
+    text-decoration: none;
 
     &:hover {
       outline: none;
-      background-color: transparent;
+      color: #86cee8;
     }
   }
 
