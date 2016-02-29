@@ -28,19 +28,14 @@
         $("#submit-button").click(function() {
             lines = [];
             printed = false;
-
             webruby.run_source(editor.getValue());
-
             console.log = window.Module['print'];
-
             if (!printed) {
                 window.Module['print']('<small><i>(no output)</i></small>');
             }
-
             var element = $("#results");
             if (!element) return; // perhaps during startup
             element.html(lines.join('<br>') + '<hr>' + element.html());
-
         });
 
         $("#clear-editor-button").click(function() {
