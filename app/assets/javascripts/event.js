@@ -52,12 +52,15 @@
     }
 
     $(document).ready(ready);
+
+    // turbolinks listens to the following line --->
     $(document).on("page:load", ready);
 
 
-    // weird workaround for jQuery. It was not loading initially and you'd have to
+    // Weird workaround for jQuery. It was not loading initially and you'd have to
     // refresh the page before any jQuery would work. Apparently, it is a turbolinks issue.
 
     // http://stackoverflow.com/questions/17317816/rails-javascript-only-works-after-reload
+    // http://stackoverflow.com/questions/18770517/rails-4-how-to-use-document-ready-with-turbo-links
 
 }());
