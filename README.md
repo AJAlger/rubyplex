@@ -7,6 +7,7 @@ I am open to contributions that are tested, but give it a go and have fun! [Try 
 
 - Update: This project will discontinue using Webruby and is now currently moving to Opal.
 - Update: This project has a *couple bugs due to Webruby that need sorting out*.
+- Update: jQuery working -> watch out for the [Turbolinks workaround for jQuery](http://stackoverflow.com/questions/18770517/rails-4-how-to-use-document-ready-with-turbo-links).
 
 # New Developer Environment Setup
 
