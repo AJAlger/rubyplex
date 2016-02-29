@@ -1,0 +1,10 @@
+@import "bourbon";
+
+@include keyframes(fadeIn) {
+  from {
+    @include transform(scale(0));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
