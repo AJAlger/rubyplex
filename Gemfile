@@ -35,10 +35,10 @@ end
 
 group :test do
   gem 'email_spec'
-  gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'chromedriver-helper'
   gem 'pg'
+  gem 'poltergeist'
 end
 
 group :production do
