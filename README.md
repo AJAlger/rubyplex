@@ -1,13 +1,14 @@
 ![alt tag](https://raw.githubusercontent.com/AbdullahAlger/rubyplex/master/app/assets/images/rubyplex.jpg)
 #RubyPlex
 
-So, I got tired of writing Ruby in Sublime, or my IDE, and testing it in the terminal, or in IRB. Therefore, I got inspired by the [Webruby project](https://github.com/xxuejie/mruby-web-irb) by @xxuejie and decided to make my own Ruby editor in the browser. The benefit of this browser is that it is a cross between [JSBin](http://jsbin.com) and Github's Gists in that it let's you code, run your code, save your code, share your code, and let others run your code. 
+So, I got tired of writing Ruby in Sublime, or my IDE, and testing it in the terminal, or in IRB. Therefore, I got inspired by the [Webruby project](https://github.com/xxuejie/mruby-web-irb) by [@xxuejie](https://github.com/xxuejie) and decided to make my own Ruby editor in the browser. The benefit of this browser is that it is a cross between [JSBin](http://jsbin.com) and Github's Gists in that it let's you code, run your code, save your code, share your code, and let others run your code. 
 
 I am open to contributions that are tested, but give it a go and have fun! [Try RubyPlex!](http://rubyplex.com)
 
 - ~~Update: This project will discontinue using Webruby and is now currently moving to Opal.~~
 - ~~Update: This project has a *couple bugs due to Webruby that need sorting out*.~~
 - Update: jQuery working -> watch out for the [Turbolinks workaround for jQuery](http://stackoverflow.com/questions/18770517/rails-4-how-to-use-document-ready-with-turbo-links).
+- Fixed standard font to make it look a wee bit nicer.
 
 # New Developer Environment Setup
 
@@ -16,8 +17,9 @@ git clone your-fork-of-the-repo
 
 cd rubyplex/
 
-# Install bower dependencies
+# Install bower/npm dependencies
 bower install
+npm install
 
 bundle install
 
