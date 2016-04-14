@@ -10,6 +10,9 @@
 //# // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 //# // about supported directives.
 
+//= require ace-rails-ap
+//= require ace/theme-terminal
+//= require ace/mode-ruby
 //= require 'jquery'
 //= require 'bootstrap-sprockets'
 //= require 'jquery_ujs'

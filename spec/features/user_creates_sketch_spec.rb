@@ -24,7 +24,6 @@ feature "User creates a sketch", js: true do
     expect(page).to have_content "You currently have 1 sketch"
     expect(current_path).to eq sketches_index_path(user.username)
 
-
   end
 
   private
